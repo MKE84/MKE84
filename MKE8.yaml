@@ -17,17 +17,17 @@ proxy-providers:
   Airport_01:
     <<: *PProviders
     proxy: "故障转移"
-    url: "订阅链接1"
+    url: "https://snisub.xunlei.netlib.re/SSS565"
     override:
-      additional-prefix: '[机场名称1]'
+      additional-prefix: '[天诚订阅器]'
       skip-cert-verify: true
       udp: true
   Airport_02:
     <<: *PProviders
     proxy: "故障转移"
-    url: "订阅链接2"
+    url: "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg"
     override:
-      additional-prefix: '[机场名称2]'
+      additional-prefix: '[每日节点]'
       skip-cert-verify: true
       udp: true
   Airport_03:
@@ -38,7 +38,14 @@ proxy-providers:
       additional-prefix: '[机场名称3]'
       skip-cert-verify: true
       udp: true
-
+  Airport_04:
+    <<: *PProviders
+    proxy: "故障转移"
+    url: "订阅链接4"
+    override:
+      additional-prefix: '[机场名称4]'
+      skip-cert-verify: true
+      udp: true
 ##############################################
 
 
@@ -204,5 +211,4 @@ proxy-groups:
   - {name: Final, type: select, <<: *Include_all,  icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png"}
   - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))", exclude-filter: "(?=.*(?i)(Seattle))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?=.*(?i)(港|hk|hongkong|Hong Kong|🇭🇰))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"}
-  - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?=.*(?i)(新|🇸🇬|SG|singapore))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"}
-  - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?=.*(?i)(日本|🇯🇵|JP|Japan))", icon: "https://pub-8feea
+  - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, f
