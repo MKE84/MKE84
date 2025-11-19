@@ -21,3 +21,11 @@ AdRules 💎
 👉🏻https://adrules.top/
 
 #翻墙配置丨插件
+
+Loon专属插件资源网站 🎈
+
+一个收录和展示适用于 Loon 的各类插件资源网站，用户可以直接通过网页浏览插件详情，并一键导入至 Loon 使用
+
+👉🏻https://pluginhub.kelee.one/
+
+#翻墙配置丨模板丨模块丨重写丨插件
