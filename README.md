@@ -29,3 +29,11 @@ Loon专属插件资源网站 🎈
 👉🏻https://pluginhub.kelee.one/
 
 #翻墙配置丨模板丨模块丨重写丨插件
+
+Matrix-io ⚡️
+
+一个专为多种ios代理客户端（如 Surge、Clash、QuantumultX、Sing-box 等）打造的配置规则仓库，提供了统一、高效的分流策略、DNS 设置、广告拦截与策略组管理等功能
+
+👉🏻https://github.com/Centralmatrix3/Matrix-io?tab=readme-ov-file
+
+#翻墙配置丨模板丨模块丨重写丨插件
