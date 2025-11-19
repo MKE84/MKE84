@@ -37,3 +37,11 @@ Matrix-io ⚡️
 👉🏻https://github.com/Centralmatrix3/Matrix-io?tab=readme-ov-file
 
 #翻墙配置丨模板丨模块丨重写丨插件
+
+规则集 ✨
+
+适用于Clash（premium核心与mihomo核心）的广告域名拦截RULE-SET规则集，每20分钟更新一次
+
+↘️ https://github.com/REIJI007/AdBlock_Rule_For_Clash?tab=readme-ov-file
+
+#翻墙配置丨模板丨模块丨重写丨插件
