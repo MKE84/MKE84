@@ -5,3 +5,11 @@ iRingo 🍎
 👉🏻https://nsringo.github.io/guide/index.html
 
 #翻墙配置丨MitM丨重写丨脚本
+
+小火箭去广告配置 🚀
+
+我查了一下，这个网站我没有在频道发过，索性发一下，我自己用的小火箭配置也是在这里面挑的，它这个去广告非常牛逼，什么抖音开屏广告，快手，腾讯视频，包括国外的app，都可以
+
+https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/
+
+#翻墙配置丨模块丨重写丨插件
