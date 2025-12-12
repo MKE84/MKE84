@@ -362,13 +362,3 @@ main();
 ```
 
 </details>
-
-<details>
-<summary>配置 4</summary>
-
-```yaml
-enabled: true
-mode: dark
-```
-
-</details>
