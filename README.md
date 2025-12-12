@@ -292,10 +292,73 @@ rule-providers:
 <summary>DNS防泄漏脚本</summary>
 
 ```js
-items:
-  - a
-  - b
-  - c
+const config = {
+  dns: {
+    listen: "0.0.0.0:5353",
+    ipv6: false,
+    enhancedMode: "fake-ip",
+    fakeIpRange: "198.18.0.1/16",
+    fakeIpFilter: [
+      "*.lan",
+      "*.localdomain",
+      "*.example",
+      "*.test",
+      "*.localhost",
+      "*.home.arpa",
+      "*.local",
+      "*.mshome.net",
+      "*.corp"
+    ],
+    nameserver: [
+      "233.6.6.6"
+    ],
+    proxyServerNameserver: [
+      "https://cloudflare-dns.com/dns-query"
+    ],
+    fallback: [
+      "tls://dns.google:853"
+    ],
+    fakeIpTtl: 1,
+    fallbackFilter: {
+      geoip: true,
+      ipcidr: [
+        "0.0.0.0/8",
+        "10.0.0.0/8",
+        "192.0.0.0/24",
+        "192.0.2.0/24",
+        "192.168.0.0/16",
+        "198.18.0.0/15",
+        "198.51.100.0/24"
+      ]
+    },
+    useHosts: false,
+    proxyDnsServer: true,
+    parallelRequest: true,
+    useSystemDns: false
+  },
+
+  tun: {
+    enable: true,
+    stack: "system",
+    mtu: 1500,
+    dnsHijack: [
+      "any:53",
+      "udp://any:53",
+      "tcp://any:53"
+    ],
+    autoRoute: true,
+    autoDetectInterface: true,
+    strictRoute: true,
+    endpointIndependentNat: true,
+    udpTimeout: 60
+  }
+};
+
+function main() {
+  return config;
+}
+
+main();
 ```
 
 </details>
