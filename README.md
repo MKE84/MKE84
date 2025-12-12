@@ -1,50 +1,84 @@
 <div align="center">
 
-🟥🟧🟨🟩🟦🟪 **HYPER–NEXUS SYSTEM ONLINE** 🟪🟦🟩🟨🟧🟥  
-██████████████████████████████████████████████████████████
+# 🖤✨ Project Hub — Dark Edition  
+**Cool • Clean • Modern • Colorful but Not Messy**
 
-# 🌈 **L A Y E R · 1 — PRIMARY SPECTRUM CORE**
-💠 Central Engine · Full Color Matrix · Hybrid Cluster  
-🟥🟧🟨🟩🟦🟪🟫⬛⬜⬛🟫🟪🟦🟩🟨🟧🟥  
+🌈🟦🟩🟨🟧🟥  
+**MULTI-LAYER COLOR HEADER · LIGHTWEIGHT VERSION**  
+🟥🟧🟨🟩🟦🌈
 
-██████████████████████████████████████████████████████████
+---
 
-## 🌈 **L A Y E R · 2 — RAINBOW LOGIC GRID**
-🟦 Quantum Cells · Pulse Field · Neon Streams 🟧  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
-🟦🟩🟨🟧🟥🟥🟧🟨🟩🟦
+### 🔥 一个多用途（混合型）的项目仓库  
+配置、脚本、工具、资源……  
+全部统一风格 · 简洁美观 · 不单一
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  
+---
 
-## 🌈 **L A Y E R · 3 — SPECTRAL MESH LAYER**
-💜 Neon Matrix · Lattice Beam · Chromatic Rails  
-🟪🟦🟩🟨🟧🟥 ⬛⬜⬛ 🟥🟧🟨🟩🟦🟪  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🌈 **L A Y E R · 4 — COLOR TURBINE RING**
-✨ Rotational Flux · Gradient Momentum · Energy Loop  
-🌈✨🌈✨🌈✨🌈✨🌈✨🌈✨🌈✨🌈✨  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🌈 **L A Y E R · 5 — MULTI-BAND FIELD SHIELD**
-🔥 Protection · Layered Shell · Fusion Edge  
-🟥🟧🟨🟩🟦🟪🟫⬛⬛🟫🟪🟦🟩🟨🟧🟥  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🌈 **L A Y E R · 6 — OUTER GRID ZONE**
-⭐ External Node Network · Interlink Arc · Halo Pane  
-🟥🟧🟨🟩🟦🟪🟫🟪🟦🟩🟨🟧🟥  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## 🌈 **L A Y E R · 7 — COSMIC BARRIER**
-💫 Chromatic Wall · Cosmic Partition · Shock Frame  
-💜❤️🧡💛💚💙💙💚💛🧡❤️💜  
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-# 🌈 **L A Y E R · 8 — ABSOLUTE SEAL**
-🚀 Final Layer · Full Spectrum Gate · Prism Lock  
-🟥🟧🟨🟩🟦🟪🟫⬛⬛🟫🟪🟦🟩🟨🟧🟥  
-
-██████████████████████████████████████████████████████████
+## 🌈 **LIGHT COLOR STACK（精简层结构）**
+🟥🟧🟨 **Core Layer** – 项目核心  
+🟦🟩🟪 **Grid Layer** – 混合结构  
+⬛⬜⬛ **Dark Shell** – 暗色视觉  
+🟥🟧🟨🟩🟦🟪 **Color Accent** – 五彩点缀  
 
 </div>
+
+---
+
+## 🗂️ 项目亮点 Highlights
+
+- 🧩 **多类型内容**  
+  配置文件、脚本、资源、工具统合在同一仓库。
+
+- 🎨 **酷黑视觉风格 + 多彩点缀**  
+  不沉闷、不单调，看起来更高级。
+
+- ⚡ **结构清晰，有层次**  
+  使用轻量彩色分层，让页面更耐看。
+
+- 📦 **可扩展设计**  
+  未来添加内容也不会乱。
+
+---
+
+## 📁 内容结构 Overview
+
+| 分类 | 描述 | 状态 |
+|------|------|------|
+| ⚙️ 配置类（Config） | 各类配置文件、模板、规则集 | ✔️ 已收录 |
+| 🛠️ 脚本工具（Scripts） | 自动化脚本、转换脚本等 | ✔️ 持续更新 |
+| 🎨 资源素材（Assets） | UI、图标、美化资源 | ⏳ 不定期新增 |
+| 🔧 其他（Misc） | 无法分类但有用的工具 | ✔️ 多样内容 |
+
+---
+
+## 🧰 使用方式 Usage
+
+> 🖤 每种内容都在对应文件夹中按功能分类。  
+> 如 unsure，可查看各目录下的 README 说明。
+
+---
+
+## 🧊 美化区块（可自定义）
+
+### 📌 功能模块
+- ✨ **视觉资源**（图标、美化素材）  
+- ⚙️ **配置模板**  
+- 🔧 **脚本小工具**  
+- 📚 **文档说明**
+
+### 🪄 优势特色
+- 🔍 信息更清晰  
+- 🎨 阅读体验更好  
+- 🚀 结构可持续扩展  
+- 📱 全平台适配
+
+---
+
+## 🧑‍💻 示例代码（暗色主题友好）
+
+```yaml
+custom-config:
+  enable: true
+  mode: "dark"
+  comments: "示例配置片段"
