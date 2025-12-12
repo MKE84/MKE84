@@ -298,3 +298,35 @@ rule-providers:
 ```yaml
 暂时不可用
 ```
+
+<details>
+<summary>配置 2</summary>
+
+```yaml
+server: 1.1.1.1
+port: 443
+```
+
+</details>
+
+<details>
+<summary>配置 3</summary>
+
+```yaml
+items:
+  - a
+  - b
+  - c
+```
+
+</details>
+
+<details>
+<summary>配置 4</summary>
+
+```yaml
+enabled: true
+mode: dark
+```
+
+</details>
