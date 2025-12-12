@@ -24,8 +24,10 @@
 ---
 
 
-## 配置文件
-```
+<details>
+<summary>DNS防泄漏配置文件</summary>
+
+```yaml
 # =================== 自动测速（真实可用检测） ==
 BaseUT: &BaseUT
   type: url-test
@@ -284,35 +286,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/China.mrs
 ```
 
-## js
-```js
-暂时不可用
-```
-
-## yaml
-```yaml
-暂时不可用
-```
-
-## yaml
-```yaml
-暂时不可用
-```
-
-<details>
-<summary>配置 2</summary>
-
-```yaml
-server: 1.1.1.1
-port: 443
-```
-
 </details>
 
 <details>
-<summary>配置 3</summary>
+<summary>DNS防泄漏脚本</summary>
 
-```yaml
+```js
 items:
   - a
   - b
