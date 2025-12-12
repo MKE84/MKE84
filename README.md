@@ -1,6 +1,6 @@
 <div align="center">
 
-#       项目中心  
+#        个人使用  
 **酷 • 干净 • 现代 **
 
 ---
@@ -25,6 +25,7 @@
 
 
 <details>
+<summary>个人定制修改</summary>
 <summary>DNS防泄漏配置文件</summary>
 
 ```yaml
