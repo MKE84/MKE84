@@ -23,9 +23,8 @@
 
 ---
 
-
-<details>
 ##个人定制修改
+<details>
 <summary>DNS防泄漏配置文件</summary>
 
 ```yaml
