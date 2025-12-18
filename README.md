@@ -16,7 +16,8 @@
 
 | 分类 | 描述 | 链接 |
 |-----|------|-----|
-| Clash | 正确分流 | https://www.aloxaf.com/2025/04/how_to_use_geosite/ | 名字 | 描述 | 链接 |
+| Clash | 正确分流 | https://www.aloxaf.com/2025/04/how_to_use_geosite/ 
+| 名字 | 描述 | 链接 |
 | 名字 | 描述 | 链接 |
 | 名字 | 描述 | 链接 |
 | 名字 | 描述 | 链接 |
