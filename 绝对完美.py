@@ -6,8 +6,8 @@ import requests
 import yaml
 import time
 import datetime  
-import logging  # 新增
-from typing import Optional  # 【仅新增这行：导入Optional类型提示】
+import logging
+from typing import Optional
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     ApplicationBuilder,
@@ -18,9 +18,9 @@ from telegram.ext import (
     Defaults,
     filters
 )
-import re  # 【仅新增：导入re模块，用于正则匹配】
-from urllib.parse import unquote  # 【仅新增：导入unquote，用于解码URL】
-from requests.adapters import HTTPAdapter  # 【仅新增：导入HTTPAdapter和Retry，增强请求重试能力】
+import re
+from urllib.parse import unquote
+from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from urllib3.exceptions import InsecureRequestWarning
 import warnings
@@ -38,26 +38,21 @@ from urllib.parse import unquote
 import yaml
 import logging
 
-BOT_TOKEN = "8276665475:AAEH7ZF8GjijB1FLDuZOyBsX-2vtaV05Vig"  # 去@BotFather获取
-AUTHORIZED_USER_IDS = {7656267951}  # 去@userinfobot获取自己的ID
-NODES_PER_PAGE = 100  # 每页显示节点数量（与新UI保持一致）
+BOT_TOKEN = ""  # 去@BotFather获取
+AUTHORIZED_USER_IDS = {}  # 去@userinfobot获取自己的ID
+NODES_PER_PAGE = 100  # 每页显示节点数量
 # ---------------- 初始化日志 --------------------
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 # ---------------- 用户相关全局状态 --------------------
-# 节点数据缓存：{user_id: 解析后的节点结果}
 nodes_cache = dict()
-# 节点折叠状态：{user_id: True(折叠)/False(展开)}
 nodes_fold_status = dict()
-# 筛选参数配置：{user_id: {"country": 筛选国家, "protocol": 筛选协议, ...}}
 user_filter_params = dict()
 
-# ---------------- 定义国旗映射表（保持你提供的原表） --------------------
+# ---------------- 定义国旗映射表 --------------------
 COUNTRY_FLAGS = {
-    # 【原有的内容保留不变，在对应分类里插下面这些新的就行】
 
-    # 中国及港澳台（不变）
     "CN": "🇨🇳",   # 中国
     "TW": "🇹🇼",   # 台湾
     "HK": "🇭🇰",   # 香港
@@ -137,7 +132,6 @@ COUNTRY_FLAGS = {
 def extract_country_from_name(name: str) -> str:
     """基础版国家码提取函数，作为兜底逻辑"""
     name_lower = name.lower()
-    # 简单匹配常见关键词（也可以直接复用你之前的country_maps）
     country_maps = {
             "台湾": "TW", "taiwan": "TW", "tw": "TW",
             "香港": "HK", "hongkong": "HK", "hk": "HK",
@@ -255,8 +249,7 @@ def extract_country_from_name(name: str) -> str:
             return map_code
     return "UNKNOWN"
 
-# ---------------- 定义可能缺失的辅助函数（防止再报错！） --------------------
-# 代码里用到了auto_detect_traffic_display和auto_detect_time_display，假设之前没定义
+# ---------------- 定义辅助函数 --------------------
 def bytes_to_human(size: float) -> str:
     """字节转人类可读格式（比如1024→1KB）"""
     units = ["B", "KB", "MB", "GB", "TB"]
@@ -412,7 +405,6 @@ def parse_clash_subscription(sub_url: str) -> dict:
         
         }
 
-        # 保留你提供的country_maps作为兜底
         country_maps = {
         
         }
@@ -549,7 +541,7 @@ async def send_nodes_page(update: Update, context: ContextTypes.DEFAULT_TYPE, us
         
         filter_country = user_filter_params.get(user_id, {}).get("country")
         filtered_nodes = data["nodes"]
-        if filter_country and filter_country != "未知地区":  # 缩进恢复正常
+        if filter_country and filter_country != "未知地区": 
             filtered_nodes = [n for n in filtered_nodes if n["country_name"] == filter_country]
         print(f"filtered_nodes长度: {len(filtered_nodes)}，内容预览: {[n.get('name') for n in filtered_nodes[:3]]}")
         
@@ -600,7 +592,7 @@ async def send_nodes_page(update: Update, context: ContextTypes.DEFAULT_TYPE, us
 
 
 
-        # ---------------- 按钮组移回try块内部！----------------
+        # ---------------- 按钮组try块内部！----------------
         keyboard = []
         page_buttons = []
         if page > 0:
@@ -619,10 +611,10 @@ async def send_nodes_page(update: Update, context: ContextTypes.DEFAULT_TYPE, us
         ]
         keyboard.append(func_buttons)
 
-        # ---------------- 发送消息也移回try块内部，修复try-except结构 ----------------
+        # ---------------- try块内部try-except结构 ----------------
         full_message = header_text + (nodes_text if show_nodes else "")
-        print(f"header_text: {header_text}")#新增
-        print(f"nodes_text: {nodes_text}")#新增
+        print(f"header_text: {header_text}")
+        print(f"nodes_text: {nodes_text}")
         try:
             if message_to_edit:
                 await message_to_edit.edit_text(full_message, parse_mode="HTML", reply_markup=InlineKeyboardMarkup(keyboard))
@@ -641,7 +633,7 @@ async def send_nodes_page(update: Update, context: ContextTypes.DEFAULT_TYPE, us
 
 
 
-    # ---------------- 外层except移到正确位置，和try配对 ----------------
+    # ---------------- 外层except和try配对 ----------------
     except Exception as e:
         logging.warning(f"加载页面出错: {str(e)}")
         prompt = f"⚠️ 页面加载失败：{str(e)}"
@@ -666,16 +658,14 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
     callback_data = query.data
 
-    # 翻页处理：加严格格式校验
     if callback_data.startswith("nodepage_"):
         parts = callback_data.split("_")
         page = int(parts[1]) if len(parts) == 2 and parts[1].isdigit() else 0
         await send_nodes_page(update, context, user_id, page=page, message_to_edit=query.message)
 
-    elif callback_data.startswith("toggle_nodes_"):  # 这里和上面的if缩进一样，都是4个空格
+    elif callback_data.startswith("toggle_nodes_"): 
         parts = callback_data.split("_")
         page = int(parts[2]) if len(parts) == 3 and parts[2].isdigit() else 0
-        # 强制切换展开/收起状态，避免Telegram报错
         current_show = nodes_fold_status.get(user_id, False)
         new_show_status = not current_show
         nodes_fold_status[user_id] = new_show_status
@@ -724,7 +714,6 @@ def generate_country_filter_keyboard(user_id: int) -> InlineKeyboardMarkup:
     
     all_countries = nodes_cache[user_id]["all_countries"]
     all_countries.sort()
-    # 按每行3个按钮排版
     buttons = []
     for i in range(0, len(all_countries), 3):
         row = [
@@ -742,7 +731,6 @@ def generate_country_filter_keyboard(user_id: int) -> InlineKeyboardMarkup:
 # ---------------- 命令 & 消息处理 --------------------
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """/start 命令处理"""
-    # ✅ 删掉了多余的授权代码和错误缩进，直接保留欢迎消息逻辑
     await update.message.reply_text(
         "👋 欢迎使用【Clash订阅工具】！\n"
         "直接发送Clash订阅链接即可查看节点信息～\n"
@@ -753,18 +741,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 
-# ========== 下面是你原来的handle_subscription函数（不用改！） ==========
+# ========== handle_subscription函数==========
 async def handle_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """处理订阅/节点/混发（分栏显示解析中+实时进度数字）"""
     sub_content = update.message.text.strip()
-    SUBSCRIPTION_PROTOS = {"http", "https"}  # 订阅类
+    SUBSCRIPTION_PROTOS = {"http", "https"} 
     NODE_PROTOS = {
         "ss", "vmess", "trojan", "vless", "ssr",
         "trojan-go", "wireguard", "shadowsocksr", "tuic", "hysteria"
-    }  # 节点类
+    }  
     ALL_PROTOS = SUBSCRIPTION_PROTOS.union(NODE_PROTOS)
 
-    # ========== 1. 提取完整唯一链接，防止截断 ==========
+    # ========== 1. 提取完整==========
     node_link_pattern = re.compile(
         rf'(?:{"|".join(ALL_PROTOS)})://[A-Za-z0-9+/=_\-./?&%#]+',
         re.IGNORECASE | re.MULTILINE
@@ -799,7 +787,7 @@ async def handle_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
     sub_done = 0
     node_done = 0
 
-    # 解析订阅组：逐个解析，每完成一个更新进度
+    # 解析订阅组
     if sub_count > 0:
         for link in sub_links:
             try:
@@ -816,7 +804,7 @@ async def handle_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
                 sub_done += 1
                 await loading_msg.edit_text(get_progress_text(sub_done, node_done))
 
-    # 解析节点组：逐个解析，每完成一个更新进度
+    # 解析节点组
     if node_count > 0:
         for link in node_links:
             try:
@@ -839,7 +827,6 @@ async def handle_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
         await loading_msg.edit_text(error_msg)
         return
 
-    # 节点二次去重（可选关闭）
     seen_node_keys = set()
     final_nodes = []
     for node in valid_nodes:
@@ -848,7 +835,7 @@ async def handle_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
             seen_node_keys.add(node_key)
             final_nodes.append(node)
 
-    # 原版结果构造逻辑
+
     user_id = update.effective_user.id
     sub_url = sub_links[-1] if sub_count > 0 and (sub_done - sum(1 for d in fail_details if '订阅' in d)) > 0 else "内容"
     merged_result = {
@@ -892,11 +879,11 @@ def main() -> None:
     defaults = Defaults(parse_mode="HTML")
     application = ApplicationBuilder().token(BOT_TOKEN).defaults(defaults).build()
 
-    # 注册处理器（移除重复的add_auth命令）
+    # 注册处理器
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_subscription))
     application.add_handler(CallbackQueryHandler(handle_callback))
-    # 启动机器人
+
     print("🚀 机器人启动成功了～")
     application.run_polling()
 
